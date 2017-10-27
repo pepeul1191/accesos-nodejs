@@ -3,14 +3,19 @@ var database = require('./database');
 
 var db = database.db;
 
-const Usuario = db.define('usuarios', {
-	usuario: { type: Sequelize.STRING },
-	contrasenia: { type: Sequelize.STRING }
+const EstadoUsuario = db.define('estado_usuarios', {
+	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+	nombre: { type: Sequelize.STRING, allowNull: false,  },
 });
 
-const Post = db.define('post', {
-	nombre: { type: Sequelize.STRING },
-  	timestamps: true
+const Usuario = db.define('usuarios', {
+	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+	usuario: { type: Sequelize.STRING },
+	contrasenia: { type: Sequelize.STRING },
+	correo: { type: Sequelize.STRING, allowNull: false,  },
+	estado_usuario_id: { type: Sequelize.INTEGER, references: {
+		model: EstadoUsuario, key: 'id', deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+	}},
 });
 
 const Sistema = db.define('sistemas', {
@@ -27,10 +32,11 @@ const Modulo = db.define('modulos', {
 	icono: { type: Sequelize.STRING },
 	sistema_id: { type: Sequelize.INTEGER, references: {
 		model: Sistema, key: 'id', deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-	  }},
+	}},
 });
 
+exports.db = db;
 exports.usuario = Usuario;
-exports.post = Post;
 exports.sistema = Sistema;
 exports.modulo = Modulo;
+exports.estado_usuario = EstadoUsuario;
