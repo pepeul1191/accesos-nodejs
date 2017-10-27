@@ -20,6 +20,15 @@ const Sistema = db.define('sistemas', {
 	repositorio: { type: Sequelize.STRING },
 });
 
+const Modulo = db.define('modulos', {
+	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+	nombre: { type: Sequelize.STRING, allowNull: false,  },
+	url: { type: Sequelize.STRING },
+	icono: { type: Sequelize.STRING },
+	sistema_id: { type: Sequelize.INTEGER },
+});
+
 exports.usuario = Usuario;
 exports.post = Post;
 exports.sistema = Sistema;
+exports.modulo = Modulo;

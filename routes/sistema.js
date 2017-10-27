@@ -9,8 +9,8 @@ module.exports = [
         handler: function (request, reply) {
            models. sistema.findAll({
                 attributes: ['id', 'nombre', 'version', 'repositorio']
-            }).then(function (usuario) {
-                reply(usuario);
+            }).then(function (sistemas) {
+                reply(sistemas);
             });
         }
     },
