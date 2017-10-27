@@ -12,7 +12,7 @@ module.exports = [
         method: 'GET',
         path: '/sistema/detalle/{id}', 
         handler: function (request, reply) {
-            reply('Hello, world!');
+            reply('Sistema nª' +request.params.id);
         }
     }
 ];
