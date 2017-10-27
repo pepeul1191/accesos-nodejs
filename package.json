@@ -1,15 +1,17 @@
 {
-  "name": "accesos",
-  "version": "1.0.0",
-  "description": "Microservicio de Accesos NodeJS-HapiJS",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Pepe Valdivia <jvaldivia@softweb.pe>",
-  "license": "ISC",
-  "dependencies": {
-    "hapi": "^16.6.2",
-    "nodemon": "^1.12.1"
-  }
+    "name": "accesos",
+    "version": "1.0.0",
+    "description": "Microservicio de Accesos NodeJS-HapiJS",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Pepe Valdivia <jvaldivia@softweb.pe>",
+    "license": "ISC",
+    "dependencies": {
+        "hapi": "^16.6.2",
+        "nodemon": "^1.12.1",
+        "sequelize": "^4.19.0",
+        "sqlite3": "^3.1.13"
+    }
 }
