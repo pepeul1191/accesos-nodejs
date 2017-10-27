@@ -7,11 +7,11 @@ module.exports = [
         method: 'GET', 
         path: '/sistema/listar', 
         handler: function (request, reply) {
-           models. sistema.findOne().then(sistema => {
-                  console.log(sistema);
+           models. sistema.findAll({
+                attributes: ['id', 'nombre', 'version', 'repositorio']
+            }).then(function (usuario) {
+                reply(usuario);
             });
-
-            reply('Lista de Sistemas');
         }
     },
     {

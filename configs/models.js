@@ -14,9 +14,10 @@ const Post = db.define('post', {
 });
 
 const Sistema = db.define('sistemas', {
-	nombre: { type: Sequelize.STRING },
+	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+	nombre: { type: Sequelize.STRING, allowNull: false,  },
 	version: { type: Sequelize.STRING },
-	repositorio: { type: Sequelize.STRING }
+	repositorio: { type: Sequelize.STRING },
 });
 
 exports.usuario = Usuario;
