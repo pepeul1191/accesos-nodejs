@@ -25,7 +25,9 @@ const Modulo = db.define('modulos', {
 	nombre: { type: Sequelize.STRING, allowNull: false,  },
 	url: { type: Sequelize.STRING },
 	icono: { type: Sequelize.STRING },
-	sistema_id: { type: Sequelize.INTEGER },
+	sistema_id: { type: Sequelize.INTEGER, references: {
+		model: Sistema, key: 'id', deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+	  }},
 });
 
 exports.usuario = Usuario;
