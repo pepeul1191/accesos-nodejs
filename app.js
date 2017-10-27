@@ -13,14 +13,14 @@ server.start((err) => {
     console.log(`Server running at: ${server.info.uri}`);
 });
 
-server.route(routes);
-
-/*
-server.route({
+var index = server.route({
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-        reply('Hello, world!');
+        reply('Error: Ruta vacía');
     }
 });
-*/
+
+routes.concat(index);
+
+server.route(routes);
