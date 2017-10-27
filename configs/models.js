@@ -8,12 +8,12 @@ const Usuario = db.define('usuarios', {
 	contrasenia: { type: Sequelize.STRING }
 });
 
-const Post = db.define('post', {}, {
+const Post = db.define('post', {
 	nombre: { type: Sequelize.STRING },
   	timestamps: true
 });
 
-const Sistema = db.define('sistemas', {}, {
+const Sistema = db.define('sistemas', {
 	nombre: { type: Sequelize.STRING },
 	version: { type: Sequelize.STRING },
 	repositorio: { type: Sequelize.STRING }
