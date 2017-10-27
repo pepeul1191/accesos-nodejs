@@ -13,12 +13,6 @@ server.state('session', {
     encoding: 'base64json'       // cookie data is JSON-stringified and Base64 encoded
 });
 
-server.state('data', {
-
-});
-
-
-
 server.start((err) => {
     if (err) { throw err; }
     console.log(`Server running at: ${server.info.uri}`);
@@ -29,7 +23,6 @@ setHeader(server, 'Content-Type', 'text/plain');
 setHeader(server, 'Server', 'Ubuntu');
 
 server.ext('onPreHandler', function (request, reply) {
-    //request.response.header('X-API-VERSION', '0.0.1');
     reply.continue();
 });
 
